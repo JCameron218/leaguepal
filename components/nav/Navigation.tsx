@@ -12,7 +12,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import LinkInternal from '@components/common/Link/LinkInternal';
+import { LinkInternal } from '@components/common';
 
 const pages = [
   {
@@ -20,12 +20,24 @@ const pages = [
     link: '/'
   },
   {
-    label: 'About',
-    link: '/about'
+    label: 'Organizations',
+    link: '/organizations'
   },
   {
-    label: 'Contact',
-    link: '/contact'
+    label: 'Leagues',
+    link: '/leagues'
+  },
+  {
+    label: 'Teams',
+    link: '/teams'
+  },
+  {
+    label: 'Players',
+    link: '/players'
+  },
+  {
+    label: 'About',
+    link: '/about'
   },
 ];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -156,7 +168,7 @@ function Navigation() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Avatar alt="Remy Sharp" />
               </IconButton>
             </Tooltip>
             <Menu

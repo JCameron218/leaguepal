@@ -5,12 +5,10 @@ interface LinkProps extends PropsWithChildren {
   href: string;
 }
 
-const LinkInternal = ({ href, children }: LinkProps) => {
+export const LinkInternal = ({ href, children }: LinkProps) => {
   return (
     <Link href={href} legacyBehavior>
       {children}
     </Link>
   )
 };
-
-export default LinkInternal;
