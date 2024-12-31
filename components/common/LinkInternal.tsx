@@ -1,13 +1,14 @@
 import Link from 'next/link';
-import { PropsWithChildren } from 'react';
+import { CSSProperties, PropsWithChildren } from 'react';
 
 interface LinkProps extends PropsWithChildren {
   href: string;
+  style?: CSSProperties;
 }
 
-export const LinkInternal = ({ href, children }: LinkProps) => {
+export const LinkInternal = ({ href, style, children }: LinkProps) => {
   return (
-    <Link href={href} legacyBehavior>
+    <Link href={href} legacyBehavior style={ style }>
       {children}
     </Link>
   )

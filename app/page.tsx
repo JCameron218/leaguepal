@@ -1,10 +1,11 @@
-import { Box, Grid2, Paper, Stack, Typography } from "@mui/material";
+'use client';
+import { Box, Grid2, Typography } from "@mui/material";
 import Image from 'next/image';
 import CorporateFareIcon from '@mui/icons-material/CorporateFare';
 import GroupWorkIcon from '@mui/icons-material/GroupWork';
 import GroupsIcon from '@mui/icons-material/Groups';
 import ContactsIcon from '@mui/icons-material/Contacts';
-import { LinkInternal } from "@components/common";
+import { IconLink } from "@components/common";
 
 export default function Home() {
   return (
@@ -35,45 +36,29 @@ export default function Home() {
       </Grid2>
       <Grid2 size={12}>
         <Grid2 container spacing={2}>
-          <Grid2 size={3}>
-            <Paper elevation={3} sx={{ pt: 4, pb: 4, borderRadius: '10px', backgroundColor: 'lightgray' }}>
-              <LinkInternal href="/organizations">
-                <Stack spacing={2} justifyContent={'center'} alignItems={'center'}>
-                  <CorporateFareIcon fontSize="large" />
-                  <h3>Organizations</h3>
-                </Stack>
-              </LinkInternal>
-            </Paper>
+          <Grid2 size={{ xs: 6, md: 3 }}>
+            <IconLink href="/organizations">
+                <CorporateFareIcon fontSize="large" />
+                <h3>Organizations</h3>
+            </IconLink>
           </Grid2>
-          <Grid2 size={3}>
-            <Paper elevation={3} sx={{ pt: 4, pb: 4, borderRadius: '10px', backgroundColor: 'lightgray' }}>
-              <LinkInternal href="/leagues">
-                <Stack spacing={2} justifyContent={'center'} alignItems={'center'}>
-                  <GroupWorkIcon fontSize="large" />
-                  <h3>Leagues</h3>
-                </Stack>
-              </LinkInternal>
-            </Paper>
+          <Grid2 size={{ xs: 6, md: 3 }}>
+            <IconLink href="/leagues">
+              <GroupWorkIcon fontSize="large" />
+              <h3>Leagues</h3>
+            </IconLink>
           </Grid2>
-          <Grid2 size={3}>
-            <Paper elevation={3} sx={{ pt: 4, pb: 4, borderRadius: '10px', backgroundColor: 'lightgray' }}>
-              <LinkInternal href="/teams">
-                <Stack spacing={2} justifyContent={'center'} alignItems={'center'}>
-                  <GroupsIcon fontSize="large" />
-                  <h3>Teams</h3>
-                </Stack>
-              </LinkInternal>
-            </Paper>
+          <Grid2 size={{ xs: 6, md: 3 }}>
+            <IconLink href="/teams">
+              <GroupsIcon fontSize="large" />
+              <h3>Teams</h3>
+            </IconLink>
           </Grid2>
-          <Grid2 size={3}>
-            <Paper elevation={3} sx={{ pt: 4, pb: 4, borderRadius: '10px', backgroundColor: 'lightgray' }}>
-              <LinkInternal href="/players">
-                <Stack spacing={2} justifyContent={'center'} alignItems={'center'}>
-                  <ContactsIcon fontSize="large" />
-                  <h3>Players</h3>
-                </Stack>
-              </LinkInternal>
-            </Paper>
+          <Grid2 size={{ xs: 6, md: 3 }}>
+            <IconLink href="/players">
+              <ContactsIcon fontSize="large" />
+              <h3>Players</h3>
+            </IconLink>
           </Grid2>
         </Grid2>
       </Grid2>

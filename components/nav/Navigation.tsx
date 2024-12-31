@@ -42,6 +42,24 @@ const pages = [
 ];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
+const styles = {
+  logoText: {
+    mr: 4,
+    display: { xs: 'none', md: 'flex' },
+    fontWeight: 600,
+    color: 'inherit',
+    textDecoration: 'none',
+  },
+  logoTextMobile: {
+    mr: 2,
+    display: { xs: 'flex', md: 'none' },
+    flexGrow: 1,
+    fontWeight: 600,
+    color: 'inherit',
+    textDecoration: 'none',
+  },
+};
+
 function Navigation() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
@@ -70,36 +88,10 @@ function Navigation() {
             noWrap
             component="a"
             href="/"
-            sx={{
-              mr: 4,
-              display: { xs: 'none', md: 'flex' },
-              fontWeight: 600,
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
+            sx={styles.logoText}
           >
             League Pal
           </Typography>
-          {/* TODO: make this work in future */}
-          {/* <Box
-            sx={{
-              display: { xs: 'none', md: 'flex' },
-              alignItems: 'center',
-              justifyContent: 'center',
-              mr: 2,
-            }}
-          >
-            <Image
-              src="/LeaguePal_V2.png"
-              alt="The Future"
-              width={80}
-              height={50}
-              style={{
-                borderRadius: '5px',
-              }}
-            />
-          </Box> */}
-
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -141,14 +133,7 @@ function Navigation() {
             noWrap
             component="a"
             href="/"
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontWeight: 600,
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
+            sx={styles.logoTextMobile}
           >
             League Pal
           </Typography>
@@ -157,7 +142,7 @@ function Navigation() {
               <Button
                 key={page.label}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: 'white', display: 'block', ':hover': { fontWeight: 700 } }}
               >
                 <LinkInternal href={page.link}>
                   {page.label}
